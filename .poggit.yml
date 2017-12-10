@@ -2,7 +2,7 @@
 branches:
 - master
 projects:
-  MineReset:
+  MineReset-Latest:
     path: ""
     icon: meta/minereset.png
 ...
