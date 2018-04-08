@@ -45,16 +45,16 @@ class CreationListener implements Listener {
 
                 if($session->canGenerate()){
                     $mine = $session->generate($this->getApi()->getMineManager());
-                    $event->getPlayer()->sendMessage("You have created a mine called " . $mine->getName() . ".");
-                    $event->getPlayer()->sendMessage("You can set it using /mine set " . $mine->getName() . " <data>");
+                    $event->getPlayer()->sendMessage("§dYou have created a mine called §3" . $mine->getName() . ".");
+                    $event->getPlayer()->sendMessage("§dYou can set it using /mine set §3" . $mine->getName() . " <data>");
                     unset($this->sessions[array_search($session, $this->sessions)]);
                 }
                 else{
-                    $event->getPlayer()->sendMessage("You have set position A. Tap another block to set position B.");
+                    $event->getPlayer()->sendMessage("§5You have set position A. §3Tap another block to set position B.");
                 }
             }
             else{
-                $event->getPlayer()->sendMessage(TextFormat::RED . "Failed to create mine due to level switch". TextFormat::RESET);
+                $event->getPlayer()->sendMessage(TextFormat::RED . "§cFailed to create mine due to level switch". TextFormat::RESET);
                 unset($this->sessions[array_search($session, $this->sessions)]);
             }
         }
