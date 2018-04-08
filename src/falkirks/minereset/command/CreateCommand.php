@@ -18,16 +18,16 @@ class CreateCommand extends SubCommand{
                     if (!$this->getApi()->getCreationListener()->playerHasSession($sender)) {
                         if (!isset($this->getApi()->getMineManager()[$args[0]])) {
                             $this->getApi()->getCreationListener()->addSession(new MineCreationSession($args[0], $sender));
-                            $sender->sendMessage("Tap a block to set position A.");
+                            $sender->sendMessage("§5Tap a block to set position A.");
                         } else {
-                            $sender->sendMessage("That mine already exists. You must run \"/mine destroy {$args[0]}\" before creating a new one.");
+                            $sender->sendMessage("§cThat mine already exists. You must run \"§4/mine destroy {$args[0]}\" §cbefore creating a new one.");
                         }
                     } else {
-                        $sender->sendMessage("Hold up! You are already in the process of creating a mine. You need to finish that first.");
+                        $sender->sendMessage("§cHold up! You are already in the process of creating a mine. You need to finish that first.");
                     }
 
                 } else {
-                    $sender->sendMessage("Usage: /mine create <name>");
+                    $sender->sendMessage("§bPlease use: §a/mine create <name>");
                 }
             } else {
                 $sender->sendMessage(TextFormat::RED . "This command can only be run in-game." . TextFormat::RESET);
