@@ -42,8 +42,8 @@ class DestroyCommand extends SubCommand{
                         $sender->sendMessage("{$args[0]} has been destroyed.");
                     } else {
                         $str = DestroyCommand::DESTROY_STRINGS[$this->offset];
-                        $sender->sendMessage("Run: " . TextFormat::AQUA . "/mine destroy {$args[0]} $str" . TextFormat::RESET);
-                        $sender->sendMessage("To destroy mines faster, you can edit the config file directly.");
+                        $sender->sendMessage("§bRun: " . TextFormat::AQUA . "§a/mine destroy §2{$args[0]} §a$str" . TextFormat::RESET);
+                        $sender->sendMessage("§eTo destroy mines faster, you can edit the config file directly.");
                         $this->senders[$sender->getName()] = $str;
 
                         if ($this->offset === count(DestroyCommand::DESTROY_STRINGS) - 1) {
@@ -53,10 +53,10 @@ class DestroyCommand extends SubCommand{
                         $this->offset++;
                     }
                 } else {
-                    $sender->sendMessage("{$args[0]} is not a valid mine.");
+                    $sender->sendMessage("§4{$args[0]} §cis not a valid mine.");
                 }
             } else {
-                $sender->sendMessage("Usage: /mine destroy <name>");
+                $sender->sendMessage("§bPlease use: §a/mine destroy <name>");
             }
         }
         else{
