@@ -16,7 +16,7 @@ class MineCommand extends Command implements PluginIdentifiableCommand {
     /** @var  SubCommand[] */
     protected $subCommands;
     public function __construct(MineReset $api){
-        parent::__construct("mine", "Mine reset command", "/mine <create|set|list|reset|reset-all|destroy|report> <name> [parameters]");
+        parent::__construct("mine", "Mine reset command", "§bPlease use: §a/mine <create|set|list|reset|reset-all|destroy|report> <name> [parameters]");
         $this->api = $api;
         $this->subCommands = [];
     }
