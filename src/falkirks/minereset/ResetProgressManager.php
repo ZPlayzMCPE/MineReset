@@ -35,7 +35,7 @@ class ResetProgressManager{
         }
         if(isset($this->subscriptions[$mineName])){
             foreach ($this->subscriptions[$mineName] as $sender){
-                $sender->sendMessage("Reset of {$mineName} has completed.");
+                $sender->sendMessage("§dReset of §5{$mineName} §dhas completed.");
             }
             unset($this->subscriptions[$mineName]);
         }
