@@ -35,9 +35,9 @@ class SetCommand extends SubCommand{
                                 }
                                 if ($total === 100) {
                                     $this->getApi()->getMineManager()[$args[0]]->setData($save);
-                                    $sender->sendMessage(TextFormat::GREEN . "Mine has been setted. Use /mine reset {$args[0]} to see your changes.");
+                                    $sender->sendMessage(TextFormat::GREEN . "§dMine has been setted. Use §5/mine reset {$args[0]} §dto see your changes.");
                                 } else {
-                                    $sender->sendMessage(TextFormat::YELLOW . "The percents on your mine must add to 100, but they add to {$total}." . TextFormat::RESET);
+                                    $sender->sendMessage(TextFormat::YELLOW . "§cThe percents on your mine must add to 100, but they add to §4{$total}." . TextFormat::RESET);
                                 }
                             } else {
                                 $sender->sendMessage(TextFormat::RED . "Your format string looks incorrect." . TextFormat::RESET);
@@ -48,15 +48,15 @@ class SetCommand extends SubCommand{
                         }
                     }
                     else {
-                        $sender->sendMessage("You must provide at least one block with a chance value.");
+                        $sender->sendMessage("§cYou must provide at least one block with a chance value.");
                     }
                 }
                 else {
-                    $sender->sendMessage("{$args[0]} is not a valid mine.");
+                    $sender->sendMessage("§4{$args[0]} §cis not a valid mine.");
                 }
             }
             else {
-                $sender->sendMessage("Usage: /mine set <name> <data>");
+                $sender->sendMessage("§bPlease use: §a/mine set <name> <data>");
             }
         }
         else{
